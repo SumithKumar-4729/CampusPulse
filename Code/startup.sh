@@ -31,14 +31,19 @@ for arg in "$@"; do
   esac
 done
 
-if [[ ! -x "./venv/bin/python3" ]]; then
-  echo "[startup] Missing Python in ./venv. Create venv first."
+if [[ ! -x "./venv/bin/python3" ]] && [[ ! -x "../venv/bin/python3" ]]; then
+  echo "[startup] Missing Python in ./venv or ../venv. Create venv first."
   exit 1
+fi
+
+VENV_BIN="./venv/bin/python3"
+if [[ -x "../venv/bin/python3" ]]; then
+  VENV_BIN="../venv/bin/python3"
 fi
 
 if [[ "${INSTALL_DEPS}" == "true" ]]; then
   echo "[startup] Installing/updating Python dependencies..."
-  ./venv/bin/python3 -m pip install -r requirements.txt
+  ${VENV_BIN} -m pip install -r requirements.txt
 fi
 
 if [[ "${START_EMULATOR}" == "true" ]]; then
@@ -63,4 +68,4 @@ echo "[startup] Starting PostgreSQL container (geo-postgres)..."
 docker start geo-postgres >/dev/null || true
 
 echo "[startup] Launching backend server on http://127.0.0.1:8000"
-exec ./venv/bin/python3 -m uvicorn backend.app.main:app --reload
+exec ${VENV_BIN} -m uvicorn backend.app.main:app --reload
