@@ -1,0 +1,52 @@
+# Single source of truth for Python dependencies in this workspace.
+# Used by the FastAPI backend in `backend/`.
+# Install with: pip install -r requirements.txt
+
+# ============================================================================
+# BACKEND (Python/Pip) Dependencies
+# ============================================================================
+
+# API framework and ASGI server
+fastapi==0.110.3
+uvicorn==0.29.0
+
+# Database ORM + PostgreSQL driver
+SQLAlchemy==2.0.30
+psycopg2-binary==2.9.9
+
+# Validation/config
+pydantic==2.7.1
+python-dotenv==1.0.1
+
+# Auth and password security
+passlib==1.7.4
+python-jose==3.3.0
+
+# Testing
+pytest==8.2.2
+httpx==0.27.0
+
+# ============================================================================
+# FRONTEND (Android/Gradle) Dependencies - REFERENCE ONLY
+# ============================================================================
+# NOTE: These are NOT pip-installable. They are managed by Gradle.
+# Listed here as documentation for the full project dependency picture.
+#
+# Android libraries configured in:
+# - android-app/build.gradle.kts
+# - android-app/gradle/libs.versions.toml
+#
+# Key Android libraries used:
+# - androidx.compose:* (UI framework)
+# - androidx.lifecycle:lifecycle-viewmodel-compose (ViewModel + Compose)
+# - androidx.navigation:navigation-compose (Navigation)
+# - com.squareup.retrofit2:retrofit (HTTP client)
+# - com.squareup.okhttp3:okhttp (HTTP engine + logging interceptor)
+# - org.jetbrains.kotlinx:kotlinx-coroutines-* (Async/concurrency)
+# - androidx.security:security-crypto (Encrypted SharedPreferences)
+# - androidx.biometric:biometric (BiometricPrompt for fingerprint/face)
+# - com.google.android.gms:play-services-location (FusedLocationProvider)
+#
+# Build: cd android-app && ./gradlew assembleDebug
+# Test:  cd android-app && ./gradlew testDebugUnitTest
+

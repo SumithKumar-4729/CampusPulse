@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Virtual environments
+venv/
+.venv/
+
+# Android / Gradle
+.gradle/
+.kotlin/
+local.properties
+**/build/
+*.apk
+*.bundle
+
+# Database
+postgres-data/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation
+docs/

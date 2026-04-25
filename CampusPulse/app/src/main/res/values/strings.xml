@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Campus Pulse</string>
+    <string name="unlock_app_title">Unlock Campus Pulse</string>
+    <string name="unlock_app_subtitle">Please authenticate to continue</string>
+    <string name="attendance_verify_title">Confirm Attendance</string>
+    <string name="attendance_verify_subtitle">Verify your identity to mark attendance</string>
+    <string name="auth_method_fingerprint_hint">(Fingerprint preferred)</string>
+    <string name="auth_method_face_hint">(Face preferred)</string>
+    <string name="auth_method_iris_hint">(Iris preferred)</string>
+    <string name="auth_method_any_hint">(Any available method)</string>
+    <string name="biometric_method_not_available">Choose a biometric method before continuing.</string>
+</resources>
